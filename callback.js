@@ -1,17 +1,11 @@
 // Challenge 1 - Create a function addTwo that accepts one input and adds 2 to it.
-function addTwo(num) {
-  return num + 2;
-}
+const addTwo = (num) => num + 2;
 
 console.log(addTwo(3) == 5);
-console.log(addTwo(10) == 12);
 
 // Challenge 2 - Create a function addS that accepts one input and adds an "s" to it.
-function addS(word) {
-  return word + "s";
-}
+const addS = (word) => word + "s";
 
-console.log(addS("pizza") == "pizzas");
 console.log(addS("bagel") == "bagels");
 
 // Challenge 3
@@ -43,9 +37,7 @@ function forEach(array, callback) {
 
 let alphabet = "";
 const letters = ["a", "b", "c", "d"];
-forEach(letters, function (char) {
-  alphabet += char;
-});
+forEach(letters, (char) => (alphabet += char));
 console.log(alphabet == "abcd");
 
 // Challenge 5
@@ -71,10 +63,8 @@ function reduce(array, callback, initialValue) {
 }
 
 const nums = [4, 8, 1];
-const add = function (a, b) {
-  return a + b;
-};
-console.log(reduce(nums, add, 0) == 13); //-> 13
+const add = (a, b) => a + b;
+console.log(reduce(nums, add, 0) == 13);
 
 // Challenge 7
 //Construct a function intersection that compares input arrays and returns a new array with elements found in all of the inputs. BONUS: Use reduce!
@@ -89,9 +79,8 @@ function intersectionTwoArrays(array1, array2) {
   return result;
 }
 
-function intersection(...arrays) {
-  return reduce(arrays, intersectionTwoArrays, arrays[0]);
-}
+const intersection = (...arrays) =>
+  reduce(arrays, intersectionTwoArrays, arrays[0]);
 
 console.log(
   JSON.stringify(intersectionTwoArrays([5, 10, 15, 20], [15, 88, 1, 5, 7])) ==
@@ -116,9 +105,7 @@ function unionTwoArrays(array1, array2) {
   return result;
 }
 
-function union(...arrays) {
-  return reduce(arrays, unionTwoArrays, []);
-}
+const union = (...arrays) => reduce(arrays, unionTwoArrays, []);
 
 console.log(
   JSON.stringify(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5])) ==
